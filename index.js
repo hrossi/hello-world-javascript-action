@@ -10,9 +10,9 @@ try {
 
   console.log('Using the REGEX:');
   console.log(regex);
-
-  if (data.test(regex)) {
-    core.setOutput("time", time);  
+  
+  if (new RegExp("^([a-z0-9]{5,})$").test(data)) {
+    core.setOutput("time", "uhu");  
   } else {
     core.setFailed("OOOPS! FAILED");
   }
