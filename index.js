@@ -11,7 +11,7 @@ try {
   console.log('Using the REGEX:');
   console.log(regex);
   
-  if (new RegExp(regex).test(data)) {
+  if (new RegExp('${regex} as').test(data)) {
     core.setOutput("time", "uhu");  
   } else {
     core.setFailed("OOOPS! FAILED");
