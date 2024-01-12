@@ -1,0 +1,33 @@
+name: Must Pass
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+      
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    name: Must Pass
+
+    steps:
+      - name: Test 1
+        uses: hrossi/hello-world-javascript-action@v1.4
+        with:
+          regex: "\\d"
+          data-to-validate: "123"
+
+      - name: Test 2
+        uses: hrossi/hello-world-javascript-action@v1.4
+        with:
+          regex: "\\D"
+          data-to-validate: "Something else"
+
+      - name: Test 3
+        uses: hrossi/hello-world-javascript-action@v1.4
+        with:
+          regex: "[0-9]{4}"
+          data-to-validate: "1234"
